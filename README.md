@@ -5,7 +5,7 @@ Sistem Informasi Siswa adalah aplikasi berbasis web yang mempermudah pengelolaan
 
 Website ini dirancang agar sederhana, cepat, modern, dan mudah digunakan oleh siapa saja.
 
-👋 Apa itu Sistem Informasi Siswa?
+Apa itu Sistem Informasi Siswa?
 
 Sistem Informasi Siswa adalah aplikasi berbasis Laravel yang digunakan untuk:
 
@@ -21,7 +21,7 @@ User biasa hanya dapat melihat data siswa
 
 Website ini dibuat untuk menjadi contoh aplikasi akademik sederhana yang bersih, modern, dan siap digunakan untuk kebutuhan sekolah atau latihan UAS/PWL/Pemrograman Web.
 
-🚀 Fitur apa saja yang tersedia?
+ Fitur apa saja yang tersedia?
 ✔ Autentikasi Admin & User
 
 Admin: full akses
@@ -62,24 +62,24 @@ Pencarian data siswa berdasarkan nama
 
 Pembagian hak akses antara Admin & User
 
-📅 Release Date
+ Release Date
 
 Release date: 29 November 2025
 Project ini dibuat dan dikembangkan oleh:
-✨ HADYNATA YUSUF PRATAMA ✨
+ HADYNATA YUSUF PRATAMA 
 
-Jika kalian suka project ini, silakan kasih stars ⭐ di GitHub agar memberi semangat untuk update berikutnya!
+Jika kalian suka project ini, silakan kasih stars  di GitHub agar memberi semangat untuk update berikutnya!
 
-🔑 Default Account for Testing
-👑 Admin
+ Default Account for Testing
+ Admin
 email: admin@gmail.com
 password: 12345678
 
-👤 User
+ User
 email: user@gmail.com
 password: 12345678
 
-🛠 Install
+ Install
 
 Ikuti langkah berikut untuk menjalankan project:
 
@@ -114,17 +114,17 @@ php artisan serve
 Buka browser:
 👉 http://127.0.0.1:8000
 
-👨‍💻 Developer
-✨ HADYNATA YUSUF PRATAMA
+ Developer
+ HADYNATA YUSUF PRATAMA
 
 Mahasiswa Informatika dengan passion di bidang Web Development.
-Membangun aplikasi ini dengan penuh cinta ❤️‍🔥 dan niat agar bisa membantu teman-teman memahami Laravel dengan lebih mudah.
+Membangun aplikasi ini dengan penuh cinta  dan niat agar bisa membantu teman-teman memahami Laravel dengan lebih mudah.
 
 Instagram: @hadynata
 
 LinkedIn: Hadynata Yusuf Pratama
 
-🤝 Contributing
+ Contributing
 
 Kontribusi sangat diterima!
 Silakan buat issues, pull request, atau tambahkan fitur baru seperti:
@@ -137,7 +137,7 @@ Role tambahan
 
 Sistem kelas & wali kelas
 
-📄 License
+ License
 
 Copyright © 2025
 Sistem Informasi Siswa is open-sourced software licensed under the MIT License.

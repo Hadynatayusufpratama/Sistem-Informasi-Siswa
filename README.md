@@ -1,211 +1,207 @@
 📘 SISTEM INFORMASI SISWA — Web Akademik Sekolah
 
-Sistem Informasi Siswa adalah aplikasi berbasis Laravel yang dirancang untuk membantu sekolah mengelola data siswa, guru, kelas, mata pelajaran, jadwal, dan nilai secara terstruktur.
+Sistem Informasi Siswa adalah aplikasi berbasis Laravel yang dirancang untuk membantu sekolah mengelola data siswa, guru, kelas, jadwal pelajaran, mata pelajaran, dan nilai rapor secara terstruktur.
 
-Tujuan aplikasi ini: bikin pengelolaan data akademik lebih cepat, lebih rapi, dan lebih efisien dengan tampilan modern dan fitur manajemen lengkap.
+Tujuan aplikasi ini: bikin pengelolaan data akademik lebih cepat, rapi, aman, serta efisien dengan tampilan modern dan fitur manajemen sekolah yang lengkap.
 
 ✨ Fitur Utama
+👨‍🏫 Manajemen Siswa
 
-🧑‍🎓 Manajemen Siswa (tambah, edit, hapus, lihat detail)
+Tambah, edit, hapus, dan lihat detail siswa
 
-👨‍🏫 Manajemen Guru
+Statistik gender otomatis (Laki-laki & Perempuan)
+
+Statistik jumlah siswa per kelas
+
+👩‍🏫 Manajemen Guru
+
+Tambah, edit, hapus, dan lihat data guru
+
+Relasi guru ↔ mata pelajaran
 
 🏫 Manajemen Kelas
 
+Tambah, edit, hapus kelas
+
+Menampilkan daftar siswa dalam setiap kelas
+
 📚 Manajemen Mata Pelajaran
 
-📅 Manajemen Jadwal Pelajaran
+CRUD mata pelajaran
 
-📄 Input & Lihat Nilai Raport
+Relasi mapel ↔ guru ↔ kelas
 
-🔐 Autentikasi Admin & Role User
+🗓️ Manajemen Jadwal Pelajaran
 
-🌙 Tema Dark Mode & Light Mode
+Input jadwal pelajaran
 
-📊 Dashboard Statistik (jumlah siswa per kelas, statistik gender, dsb)
+Relasi dengan kelas, guru, dan mapel
+
+📊 Dashboard Statistik
+
+Statistik jumlah siswa berdasarkan gender
+
+Statistik jumlah siswa per kelas
+
+Menampilkan daftar siswa laki-laki & perempuan (fitur tambahan)
+
+Menampilkan daftar siswa per kelas
+
+🎨 UI Modern & Clean
+
+Menggunakan Blade Template Laravel
+
+Dark Mode Support
+
+Tampilan dashboard modern dan responsif
 
 🧰 Teknologi yang Digunakan
-
-Laravel 10+
-
-PHP 8.2+
-
-MySQL / MariaDB
-
-Blade Template
-
-Bootstrap 5
-
-Composer
-
-XAMPP / Laragon / WAMP
-
-🛠 Cara Clone & Menjalankan Sistem Informasi Siswa (Langkah Demi Langkah)
+Teknologi	Keterangan
+Laravel 10	Framework utama
+PHP 8.2	Bahasa Pemrograman
+MySQL / MariaDB	Database
+Blade Template	View Engine
+Bootstrap 5	UI Styling
+Eloquent ORM	Manajemen data
+Laravel Artisan	CLI Laravel
+🛠 Cara Install & Clone Sistem Informasi Siswa (Lengkap Dari Nol)
 1️⃣ Install Git
-
-Git dipakai untuk meng-clone source code dari GitHub.
 
 Download Git
 👉 https://git-scm.com/downloads
 
-Install Git seperti aplikasi biasa.
+Install seperti biasa
 
-Cek instalasi:
+Cek apakah Git sudah terpasang:
 
 git --version
 
 
-Kalau muncul versi, berarti berhasil.
+Kalau muncul versi, berarti sukses.
 
-2️⃣ Install Composer
+2️⃣ Install PHP & Composer
+Install PHP (versi minimal 8.1)
 
-Composer digunakan untuk menginstall dependency Laravel.
+Download dari:
+👉 https://windows.php.net/download/
 
-Download di sini:
-👉 https://getcomposer.org/download/
+Install Composer
 
-Setelah terinstall, cek:
+https://getcomposer.org/download/
+
+Cek composer:
 
 composer --version
 
-3️⃣ Install XAMPP / MySQL Server
+3️⃣ Install XAMPP / Laragon
 
-Karena aplikasi ini membutuhkan database MySQL.
+Disarankan pakai XAMPP:
 
-Download XAMPP:
+Download:
 👉 https://www.apachefriends.org/
 
-Nyalakan:
+Aktifkan:
 
-✔ Apache
-✔ MySQL
+Apache
 
-4️⃣ Clone Repository Sistem Informasi Siswa
+MySQL
 
-Pilih folder di laptop kamu, misalnya:
+4️⃣ Buat Database Baru
 
-C:\Users\ASUS\Documents\Project-Sekolah
+Buka phpMyAdmin
 
+Buat database baru:
 
-Clone repository:
+Nama database: db_siswa
+(Terserah kamu, tapi sesuaikan dengan file .env nanti)
+
+5️⃣ Clone Repository Sistem Informasi Siswa
+
+Pilih folder untuk menyimpan project, lalu jalankan:
 
 git clone https://github.com/HADY2006-hdy/Sistem-Informasi-Siswa.git
 
 
-Masuk ke folder project:
+Masuk ke folder:
 
 cd Sistem-Informasi-Siswa
 
-5️⃣ Install Dependency Laravel
+6️⃣ Install Dependency Laravel
 
-Masih di dalam folder project:
+Jalankan:
 
 composer install
 
 
-Lalu buat file .env:
+Lanjutkan dengan meng-copy file environment:
 
 cp .env.example .env
 
+7️⃣ Konfigurasi File .env
 
-Generate application key:
+Edit file .env:
 
-php artisan key:generate
-
-6️⃣ Setting Database
-
-Buka phpMyAdmin
-
-Buat database baru, misalnya:
-
-db_siswa
-
-
-Buka file .env lalu ubah:
-
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
 DB_DATABASE=db_siswa
 DB_USERNAME=root
 DB_PASSWORD=
 
 
-(Sesuaikan kalau kamu pakai password di MySQL)
+Sesuaikan DB_USERNAME & PASSWORD sesuai XAMPP kamu.
 
-7️⃣ Migrasi Database + Seeder
+8️⃣ Generate Key Laravel
+php artisan key:generate
 
-Jalankan:
-
+9️⃣ Migrasi Database + Seeder (isi data awal)
 php artisan migrate --seed
 
 
-Seeder akan otomatis mengisi data awal seperti admin default.
+Seeder akan mengisi:
 
-8️⃣ Jalankan Aplikasi
+Admin default
 
-Masih di dalam folder project:
+Data sample guru
 
+Data sample siswa (opsional)
+
+🔟 Jalankan Server Laravel
 php artisan serve
 
 
-Aplikasi bisa dibuka lewat browser:
+Akses web di:
 
-http://127.0.0.1:8000
+👉 http://127.0.0.1:8000
 
-9️⃣ Login Akun Admin (Default)
+👉 http://localhost:8000
 
-Gunakan akun berikut:
+👤 Akun Login Default
+Admin
+email: admin@gmail.com
+password: 12345678
 
-Email: admin@gmail.com
-
-Password: 12345678
-
-(Setara dengan versi open-source yang kamu modifikasi tadi)
-
-🔧 Perintah Tambahan Kalau Error
-
-Jika muncul error atau perubahan tidak tampil:
-
-php artisan optimize:clear
-php artisan migrate:fresh --seed
-php artisan serve
-
-
-Jika ada masalah caching:
-
-php artisan config:clear
-php artisan cache:clear
-
-📂 Struktur Folder
+📂 Struktur Folder Project
 Sistem-Informasi-Siswa/
-├── app/
-├── bootstrap/
-├── config/
-├── database/
-│   ├── factories/
-│   ├── migrations/
-│   └── seeders/
-├── public/
+├── app/                # Logic aplikasi
+├── database/           # Migration & Seeder
+├── public/             # Aset publik
 ├── resources/
-│   ├── views/
-│   └── css/js assets
+│   ├── views/          # Blade template
 ├── routes/
-│   └── web.php
-├── .env
+│   ├── web.php         # Routing utama
+├── .env                # Konfigurasi environment
 ├── composer.json
-└── README.md
+├── README.md
 
-👨‍💻 Kontributor
+👨‍💻 Developer
 
-Developer Utama:
+Hadinata Yusuf Pratama
+Developer & Maintainer Sistem Informasi Siswa
 
-Hadynata Yusuf Pratama
+Universitas Tadulako — Teknik Informatika
 
-Support & Kontributor:
-
-Reiner Dominicus Sakunab
-
-Melin Oktaviani
-
-📜 Lisensi (Opsional)
+📜 Lisensi
 
 MIT License
-Proyek bebas digunakan untuk pembelajaran & pengembangan.
+Bebas digunakan untuk pembelajaran & pengembangan.

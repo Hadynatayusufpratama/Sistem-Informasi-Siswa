@@ -1,142 +1,229 @@
-Sistem Informasi Siswa 
+# AURA – Auto Reminder Application 🕒
 
-Aplikasi Sistem Informasi Siswa berbasis Laravel 12 yang dirancang untuk membantu sekolah dalam mengelola data siswa secara cepat, modern, dan efisien.
+**AURA (Auto Reminder Application)** adalah aplikasi pengingat otomatis berbasis **Flutter** yang membantu pengguna mengatur jadwal, tugas, dan aktivitas harian.
+Tujuan AURA: bikin pengguna **lebih teratur**, **gak lupa jadwal**, dan tetap **produktif** dengan notifikasi yang terjadwal rapi.
 
-Sistem ini dibangun untuk memberikan pengalaman penggunaan yang nyaman, tampilan elegan, serta fitur manajemen data siswa yang stabil dan mudah digunakan oleh admin maupun pengguna biasa.
+---
 
-✨ Fitur Utama
-👨‍🏫 Manajemen Data Siswa (CRUD)
+## ✨ Fitur Utama
 
-Tambah, edit, hapus, dan lihat data siswa
+* 🔔 Notifikasi pengingat terjadwal (menggunakan `flutter_local_notifications`)
+* 🌓 Tema **Dark Mode** & **Light Mode**
+* 📝 Tambah, edit, dan hapus pengingat
+* 💾 Penyimpanan lokal menggunakan **SQLite (sqflite)**
+* 📅 Mendukung Android terbaru (compileSdk 36)
+* 🔐 Izin notifikasi & alarm otomatis diminta saat aplikasi berjalan pertama kali
 
-Atribut lengkap: Nama, NIS, Kelas, Gender, Alamat
+---
 
-Validasi otomatis saat input
+## 🧰 Teknologi yang Digunakan
 
-Pencarian siswa berdasarkan nama
+* **Flutter** (Dart)
+* **Android SDK**
+* **SQLite** (`sqflite`)
+* **Shared Preferences**
+* `flutter_local_notifications`
+* `permission_handler`
 
-🔐 Autentikasi Aman (Login/Logout)
+---
 
-Role Admin (full akses CRUD)
+# 🛠 Cara Clone & Menjalankan AURA dari Nol (Langkah Demi Langkah)
 
-Role User (hanya melihat data)
+---
 
-Session-based authentication Laravel
+## 1️⃣ Install Git
 
-📊 Dashboard Statistik Modern
+Git dipakai untuk meng-clone (mengambil) source code dari GitHub.
 
-Statistik jumlah siswa berdasarkan gender
+1. Download Git:
+   [https://git-scm.com/downloads](https://git-scm.com/downloads)
+2. Install Git seperti aplikasi biasa (Next → Next → Finish).
+3. Setelah selesai, cek apakah Git sudah terpasang:
 
-Statistik jumlah siswa berdasarkan kelas
+```bash
+git --version
+```
 
-Tampilan card interaktif
+Kalau muncul versi (misal `git version 2.xx`), berarti Git sudah terinstall.
 
-Layout modern berbasis Bootstrap & Icons
+---
 
-🌙 Mode Terang & Gelap
+## 2️⃣ Install Flutter SDK
 
-Light mode untuk tampilan cerah
+1. Buka panduan resmi Flutter:
+   [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install)
+2. Download Flutter untuk **Windows** (atau OS kamu).
+3. Extract ke folder, misalnya:
 
-Dark mode elegan untuk penggunaan malam
+```text
+C:\src\flutter
+```
 
-Mode tersimpan otomatis menggunakan session
+4. Tambahkan ke **PATH** (Windows):
 
-🎨 UI Modern & Clean
+   * Cari di Start Menu → “Edit the system environment variables”
+   * Klik **Environment Variables**
+   * Di “User variables” → pilih `Path` → **Edit**
+   * Tambahkan entry baru:
 
-Menggunakan Bootstrap 5
+```text
+C:\src\flutter\bin
+```
 
-Sidebar elegan & responsif
+5. Cek Flutter di terminal / PowerShell:
 
-Desain bersih, rapi, dan mudah digunakan
+```bash
+flutter --version
+```
 
-📁 Teknologi yang Digunakan
-Teknologi	Keterangan
-Laravel 12	Framework utama
-PHP 8.x	Bahasa pemrograman
-MySQL / MariaDB	Database
-Bootstrap 5	UI Framework
-Blade Template Engine	Sistem templating Laravel
-Chart.js (opsional)	Grafik data
-🔧 Instalasi & Menjalankan Project
+Kalau muncul info versi Flutter, berarti sudah siap.
 
-Ikuti langkah berikut untuk meng-clone dan menjalankan project secara lokal.
+---
 
-1️⃣ Clone Repository
-git clone https://github.com/USERNAME/Sistem-Informasi-Siswa.git
+## 3️⃣ Install Android Studio & Android SDK
 
-2️⃣ Masuk ke Folder Project
-cd Sistem-Informasi-Siswa
+1. Download Android Studio:
+   [https://developer.android.com/studio](https://developer.android.com/studio)
+2. Install seperti biasa.
+3. Buka Android Studio → klik **More Actions** → **SDK Manager**.
+4. Pastikan ini tercentang:
 
-3️⃣ Install Semua Dependency Laravel
-composer install
+   * Android **API 36** (Android 14)
+   * Android SDK Platform-Tools
+   * Android SDK Build-Tools
+5. Masih di Android Studio, jalankan **SDK Manager** dari terminal (opsional):
 
-4️⃣ Buat File .env
-cp .env.example .env
+```bash
+sdkmanager "platforms;android-36"
+```
 
+---
 
-Lalu buka file .env dan sesuaikan bagian database:
+## 4️⃣ Cek Kesiapan Flutter
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=db_siswa
-DB_USERNAME=root
-DB_PASSWORD=
+Di terminal / PowerShell:
 
-5️⃣ Generate Key Laravel
-php artisan key:generate
+```bash
+flutter doctor
+```
 
-6️⃣ Migrasi Database
-php artisan migrate
+Perintah ini akan memberi tahu kalau ada yang kurang (misalnya SDK belum lengkap).
+Ikuti saran yang muncul sampai hampir semua tanda ✔ (kecuali bagian yang memang tidak dipakai, seperti web/macos jika tidak perlu).
 
+---
 
-Jika ingin sekaligus menambahkan akun awal:
+## 5️⃣ Clone Repository AURA
 
-php artisan db:seed
+Sekarang kita ambil source code AURA dari GitHub.
 
-7️⃣ Jalankan Server
-php artisan serve
+1. Pilih folder di laptop kamu, misalnya `C:\Users\ASUS\Downloads\AURA`
+2. Buka terminal di folder tersebut, lalu jalankan:
 
+```bash
+git clone https://github.com/Reinerbroww/AURA-Auto-Reminder-Aplication-.git
+```
 
-Akses melalui browser:
-👉 http://127.0.0.1:8000
+3. Masuk ke folder project:
 
-Struktur Folder
-Sistem-Informasi-Siswa/
-├── app/
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   │   └── SiswaController.php
-│   │   └── Middleware/
-│   └── Models/
-│       └── Siswa.php
-├── public/
-│   └── assets/
-├── resources/
-│   ├── views/
-│   │   ├── layout.blade.php
-│   │   ├── dashboard.blade.php
-│   │   ├── profile.blade.php
-│   │   └── siswa/
-│   │       ├── index.blade.php
-│   │       ├── create.blade.php
-│   │       └── edit.blade.php
-├── routes/
-│   └── web.php
-├── database/
-│   └── migrations/
-└── README.md
+```bash
+cd AURA-Auto-Reminder-Aplication-
+```
 
+---
 
-👨‍💻 Developer
-✨ Hadynata Yusuf Pratama
+## 6️⃣ Install Dependency Flutter
 
-Sistem Informasi Siswa — Laravel 12
-Universitas Tadulako | Teknik Informatika
+Masih di folder project (yang ada file `pubspec.yaml`), jalankan:
 
-“Membangun sistem sekolah yang modern, efisien, dan mudah digunakan adalah misi saya. Semoga project ini bermanfaat dan terus berkembang.”
+```bash
+flutter pub get
+```
 
-📜 Lisensi
+Perintah ini akan mengunduh semua package yang dibutuhkan AURA (notifikasi, database, dll).
 
-MIT License
-Project ini bebas digunakan untuk pembelajaran dan pengembangan.
+---
+
+## 7️⃣ Hubungkan HP Android ke Laptop
+
+Ada dua opsi: **pakai HP asli** atau **emulator**.
+
+### ✅ Kalau pakai HP asli:
+
+1. Aktifkan **Developer Options**:
+
+   * Buka **Settings → About phone → Software information**
+   * Tekan **Build number** 7x sampai muncul “You are now a developer”
+2. Aktifkan **USB Debugging**:
+
+   * Settings → Developer Options → hidupkan **USB debugging**
+3. Sambungkan HP ke laptop pakai kabel data.
+4. Cek apakah HP terbaca Flutter:
+
+```bash
+flutter devices
+```
+
+Kalau ada nama device kamu di daftar, berarti HP siap dipakai.
+
+### ✅ Kalau pakai emulator (opsional):
+
+1. Buka Android Studio → **Device Manager**
+2. Tambah Virtual Device (AVD)
+3. Jalankan emulator
+4. Cek device:
+
+```bash
+flutter devices
+```
+
+---
+
+## 8️⃣ Jalankan AURA di HP / Emulator
+
+Masih di folder project AURA, jalankan:
+
+```bash
+flutter run
+```
+
+Kalau mau langsung mode **release** (lebih ringan & cepat):
+
+```bash
+flutter run --release
+```
+
+Flutter akan:
+
+* Build project,
+* Install APK ke HP/emulator,
+* Menjalankan aplikasi secara otomatis.
+
+---
+
+## 9️⃣ Perintah Tambahan Kalau Ada Error
+
+Kalau build error (misalnya setelah ganti kode atau update package), coba:
+
+```bash
+flutter clean
+flutter pub get
+flutter run
+```
+
+Kalau error terkait Gradle/SDK, pastikan:
+
+* `compileSdk` di `android/app/build.gradle.kts` sudah **36**
+* Android Studio sudah terinstall **API 36**
+
+---
+
+## 👨‍💻 Kontributor
+
+**Developer Utama:**
+
+* Reiner Dominicus Sakunab (Reinerbroww)
+
+**Support & Kontributor:**
+
+* Hadinata Yusuf Pratama
+* Melin Oktaviani

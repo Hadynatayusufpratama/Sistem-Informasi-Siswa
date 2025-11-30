@@ -101,7 +101,7 @@ php artisan serve
 Akses melalui browser:
 👉 http://127.0.0.1:8000
 
-📂 Struktur Folder
+Struktur Folder
 Sistem-Informasi-Siswa/
 ├── app/
 │   ├── Http/
@@ -127,13 +127,6 @@ Sistem-Informasi-Siswa/
 │   └── migrations/
 └── README.md
 
-📸 Screenshot (Placeholder)
-
-Tambahkan screenshot web kamu nanti di sini bro:
-
-![Dashboard](assets/screenshots/dashboard.png)
-![Data Siswa](assets/screenshots/data_siswa.png)
-![Login Page](assets/screenshots/login.png)
 
 👨‍💻 Developer
 ✨ Hadynata Yusuf Pratama

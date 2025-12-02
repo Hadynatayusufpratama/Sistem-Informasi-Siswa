@@ -1,43 +1,55 @@
-📘 SISTEM INFORMASI SISWA — Web Akademik Sekolah
-
-Sistem Informasi Siswa adalah aplikasi berbasis Laravel yang dirancang untuk membantu sekolah mengelola data siswa, guru, kelas, mata pelajaran, jadwal, dan nilai secara modern, cepat, dan terstruktur.
-
-Aplikasi ini dibuat agar proses administrasi sekolah menjadi lebih efisien, rapi, aman, dan memiliki tampilan UI yang nyaman digunakan.
+📘 SISTEM INFORMASI SISWA — WEB AKADEMIK SEKOLAH
 
 
 ---
 
-✨ Fitur Utama
+Sistem Informasi Siswa adalah aplikasi berbasis Laravel yang dirancang untuk membantu sekolah dalam mengelola data siswa, guru, kelas, mata pelajaran, jadwal, dan nilai dengan mudah dan terstruktur.
+
+Tujuan aplikasi ini adalah menyediakan sistem akademik yang cepat, rapi, aman, dan memiliki tampilan yang modern serta mudah digunakan.
+
+
+---
+
+✨ FITUR UTAMA
+
+
+---
 
 🧑‍🏫 Manajemen Siswa
 
-CRUD siswa (tambah, edit, hapus, detail)
+Tambah, edit, hapus, dan lihat detail siswa
 
 Statistik gender otomatis
 
 Statistik jumlah siswa per kelas
 
 
+👩‍🏫 Manajemen Guru
+
+CRUD guru
+
+Relasi guru ↔ mata pelajaran
+
 
 🏫 Manajemen Kelas
 
 CRUD kelas
 
-Menampilkan daftar siswa per kelas
+Menampilkan daftar siswa dalam setiap kelas
 
 
 📚 Manajemen Mata Pelajaran
 
 CRUD mata pelajaran
 
-Relasi mapel ↔ guru & jadwal
+Relasi ke guru & jadwal
 
 
 🗓️ Manajemen Jadwal Pelajaran
 
-CRUD jadwal
+Tambah, edit, dan hapus jadwal
 
-Penjadwalan otomatis berdasarkan kelas & mapel
+Penjadwalan otomatis
 
 
 📊 Dashboard Statistik
@@ -46,21 +58,24 @@ Grafik jumlah siswa
 
 Statistik gender
 
-Rekap data akademik sekolah
+Rekap data akademik
 
 
 
 ---
 
-💻 Teknologi yang Digunakan
+💻 TEKNOLOGI YANG DIGUNAKAN
+
+
+---
 
 Teknologi	Keterangan
 
-Laravel 10+	Framework utama backend
+Laravel 10+	Framework backend
 PHP 8.2+	Bahasa pemrograman
-MySQL / MariaDB	Database
-Blade Template	Sistem view
-Bootstrap 5	UI & styling
+MySQL/MariaDB	Database
+Blade Template	View system
+Bootstrap 5	Styling UI
 Chart.js	Grafik dashboard
 Composer	Dependency manager
 
@@ -68,14 +83,17 @@ Composer	Dependency manager
 
 ---
 
-🛠️ Cara Clone & Menjalankan Sistem
+🛠️ LANGKAH INSTALASI & CLONE PROJECT
+
+
+---
 
 1️⃣ Install Git
 
 Download Git:
 https://git-scm.com/downloads
 
-Cek instalasi:
+Cek versi:
 
 git --version
 
@@ -84,11 +102,10 @@ git --version
 
 2️⃣ Install Composer
 
-Composer diperlukan untuk dependency Laravel.
-Download:
+Download Composer:
 https://getcomposer.org/download/
 
-Cek:
+Cek versi:
 
 composer --version
 
@@ -97,13 +114,11 @@ composer --version
 
 3️⃣ Install PHP & XAMPP
 
-Download:
+Download XAMPP:
 https://www.apachefriends.org/
 
 Gunakan PHP 8.2 atau lebih baru
-
 Aktifkan Apache & MySQL
-
 
 
 ---
@@ -116,31 +131,31 @@ cd Sistem-Informasi-Siswa
 
 ---
 
-5️⃣ Install Dependency Laravel
+5️⃣ Install Dependency
 
 composer install
 
 
 ---
 
-6️⃣ Konfigurasi Environment
+6️⃣ Setup Environment
 
-Copy file .env:
+Copy env:
 
 cp .env.example .env
 
-Edit .env:
+Edit database di .env:
 
 DB_DATABASE=db_siswa
 DB_USERNAME=root
 DB_PASSWORD=
 
-Buat database: db_siswa di phpMyAdmin.
+Buat database di phpMyAdmin: db_siswa
 
 
 ---
 
-7️⃣ Generate Key Laravel
+7️⃣ Generate Key
 
 php artisan key:generate
 
@@ -151,9 +166,7 @@ php artisan key:generate
 
 php artisan migrate --seed
 
-Seeder akan membuat akun admin otomatis.
-
-🔐 Default Login Admin
+🔐 Default Admin Login
 
 Email: admin@gmail.com
 
@@ -167,13 +180,13 @@ Password: 12345678
 
 php artisan serve
 
-Buka pada browser:
+Akses di browser:
 http://127.0.0.1:8000
 
 
 ---
 
-🔧 Perintah Tambahan (Jika Terjadi Error)
+🔧 PERINTAH TAMBAHAN (JIKA ERROR)
 
 php artisan optimize:clear
 php artisan view:clear
@@ -182,7 +195,10 @@ php artisan migrate:fresh --seed
 
 ---
 
-👨‍💻 Kontributor
+👨‍💻 KONTRIBUTOR
+
+
+---
 
 Developer Utama
 

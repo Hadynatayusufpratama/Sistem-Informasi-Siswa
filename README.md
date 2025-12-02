@@ -1,125 +1,155 @@
 📘 SISTEM INFORMASI SISWA — Web Akademik Sekolah
 
-Sistem Informasi Siswa adalah aplikasi berbasis Laravel yang dirancang untuk membantu sekolah mengelola data siswa, guru, kelas, mata pelajaran, jadwal, dan nilai dengan mudah dan terstruktur.
+Sistem Informasi Siswa adalah aplikasi berbasis Laravel yang dirancang untuk membantu sekolah mengelola data siswa, guru, kelas, mata pelajaran, jadwal, dan nilai secara modern, cepat, dan terstruktur.
 
-Tujuan aplikasi ini: bikin pengelolaan data akademik lebih cepat, rapi, aman, dan lebih efisien, dengan tampilan modern serta fitur manajemen lengkap.
+Aplikasi ini dibuat agar proses administrasi sekolah menjadi lebih efisien, rapi, aman, dan memiliki tampilan UI yang nyaman digunakan.
+
+
+---
 
 ✨ Fitur Utama
+
 🧑‍🏫 Manajemen Siswa
 
-Tambah, edit, hapus, dan lihat detail siswa
+CRUD siswa (tambah, edit, hapus, detail)
 
-Statistik gender otomatis (Laki-laki & Perempuan)
+Statistik gender otomatis
 
 Statistik jumlah siswa per kelas
 
-👩‍🏫 Manajemen Guru
 
-Tambah, edit, hapus, dan lihat data guru
-
-Relasi guru ↔ mata pelajaran
 
 🏫 Manajemen Kelas
 
-Tambah, edit, hapus kelas
+CRUD kelas
 
-Menampilkan daftar siswa dalam setiap kelas
+Menampilkan daftar siswa per kelas
+
 
 📚 Manajemen Mata Pelajaran
 
 CRUD mata pelajaran
 
-Relasi ke guru & jadwal
+Relasi mapel ↔ guru & jadwal
+
 
 🗓️ Manajemen Jadwal Pelajaran
 
-Tambah, edit, dan hapus jadwal
+CRUD jadwal
 
 Penjadwalan otomatis berdasarkan kelas & mapel
 
+
 📊 Dashboard Statistik
 
-Jumlah siswa per kelas
+Grafik jumlah siswa
 
 Statistik gender
 
-Ringkasan data akademik sekolah
+Rekap data akademik sekolah
+
+
+
+---
 
 💻 Teknologi yang Digunakan
+
 Teknologi	Keterangan
+
 Laravel 10+	Framework utama backend
 PHP 8.2+	Bahasa pemrograman
-MySQL / MariaDB	Database aplikasi
-Blade Template	Tampilan UI
-Bootstrap 5	Styling & UI layout
-Chart.js	Statistik grafik dashboard
-Composer	Dependency manager Laravel
-🛠 Cara Clone & Menjalankan Sistem Informasi Siswa
+MySQL / MariaDB	Database
+Blade Template	Sistem view
+Bootstrap 5	UI & styling
+Chart.js	Grafik dashboard
+Composer	Dependency manager
 
-Langkah demi langkah (format sama dengan README AURA)
+
+
+---
+
+🛠️ Cara Clone & Menjalankan Sistem
 
 1️⃣ Install Git
 
 Download Git:
-🔗 https://git-scm.com/downloads
+https://git-scm.com/downloads
 
 Cek instalasi:
 
 git --version
 
+
+---
+
 2️⃣ Install Composer
 
-Laravel butuh Composer untuk mengelola dependency.
-
-Download di sini:
-🔗 https://getcomposer.org/download/
+Composer diperlukan untuk dependency Laravel.
+Download:
+https://getcomposer.org/download/
 
 Cek:
 
 composer --version
 
+
+---
+
 3️⃣ Install PHP & XAMPP
 
-Download XAMPP:
-🔗 https://www.apachefriends.org/
+Download:
+https://www.apachefriends.org/
 
-Wajib menggunakan PHP 8.2 atau lebih baru
+Gunakan PHP 8.2 atau lebih baru
 
 Aktifkan Apache & MySQL
 
+
+
+---
+
 4️⃣ Clone Repository
 
-Pilih folder, lalu jalankan:
-
 git clone https://github.com/HADY2006-hdy/Sistem-Informasi-Siswa.git
-
-
-Masuk ke folder:
-
 cd Sistem-Informasi-Siswa
 
+
+---
+
 5️⃣ Install Dependency Laravel
+
 composer install
 
-6️⃣ Copy File Environment
+
+---
+
+6️⃣ Konfigurasi Environment
+
+Copy file .env:
+
 cp .env.example .env
 
-
-Edit .env dan ubah konfigurasi database:
+Edit .env:
 
 DB_DATABASE=db_siswa
 DB_USERNAME=root
 DB_PASSWORD=
 
+Buat database: db_siswa di phpMyAdmin.
 
-Buat database di phpMyAdmin dengan nama: db_siswa
+
+---
 
 7️⃣ Generate Key Laravel
+
 php artisan key:generate
 
-8️⃣ Migrasi Database & Seeder
-php artisan migrate --seed
 
+---
+
+8️⃣ Migrasi & Seeder
+
+php artisan migrate --seed
 
 Seeder akan membuat akun admin otomatis.
 
@@ -129,34 +159,42 @@ Email: admin@gmail.com
 
 Password: 12345678
 
-9️⃣ Jalankan Server Laravel
+
+
+---
+
+9️⃣ Jalankan Server
+
 php artisan serve
 
-
-Akses melalui browser:
-
+Buka pada browser:
 http://127.0.0.1:8000
 
-🔧 Perintah Tambahan (Jika Error)
-Bersihkan Cache Laravel:
+
+---
+
+🔧 Perintah Tambahan (Jika Terjadi Error)
+
 php artisan optimize:clear
-
-Jika tampilan tidak berubah:
 php artisan view:clear
-
-Jika migration bermasalah:
 php artisan migrate:fresh --seed
+
+
+---
 
 👨‍💻 Kontributor
 
-Developer Utama:
+Developer Utama
 
 HADYNATA YUSUF PRATAMA
 
-Support & Kontributor:
+
+Support & Contributor
 
 Fidya Rahayu
-Melin Oktafiani
-I Made Aditya Pramana
-IRPANDI
 
+Melin Oktafiani
+
+I Made Aditya Pramana
+
+Irpandi
